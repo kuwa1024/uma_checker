@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# 
+data.json
+memo.txt
+umamusume.png
+umamusume_one.jpg
+tmp/
+*.code-workspace

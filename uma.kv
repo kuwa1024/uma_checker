@@ -1,0 +1,66 @@
+<MyLayout>
+    orientation: 'vertical'
+    input: text_input
+    label1: label1_output
+    label2: label2_output
+    label3: label3_output
+    labelh: label_history
+    BoxLayout:
+        size_hint_y: 0.5
+        TextInput:
+            id: text_input
+            text: ''
+            multiline: False
+    BoxLayout:
+        size_hint_y: 0.5
+        Button:
+            text: 'SS検索'
+            on_press: root.ssClicked()
+        Label:
+        Button:
+            text: 'ワード検索'
+            on_press: root.wordClicked()
+    ScrollView:
+        size_hint_y: 3
+        BoxLayout:
+            size_hint_y: None
+            orientation: 'vertical'
+            height: self.minimum_height
+            Button:
+                id: label1_output
+                size_hint_y: None
+                text: ''
+                text_size: self.size
+                halign: 'left'
+                valign: 'top'
+                on_press: root.label1Clicked()
+            Button:
+                id: label2_output
+                size_hint_y: None
+                text: ''
+                text_size: self.size
+                halign: 'left'
+                valign: 'top'
+                on_press: root.label2Clicked()
+            Button:
+                id: label3_output
+                size_hint_y: None
+                text: ''
+                text_size: self.size
+                halign: 'left'
+                valign: 'top'
+                on_press: root.label3Clicked()
+    ScrollView:
+        size_hint_y: 6
+        BoxLayout:
+            size_hint_y: None
+            orientation: 'vertical'
+            height: self.minimum_height
+            Label:
+                id: label_history
+                size_hint_y: None
+                text: ''
+                text_size: self.size
+                halign: 'left'
+                valign: 'top'
+                height: 2000
