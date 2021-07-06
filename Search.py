@@ -10,12 +10,14 @@ class Search:
 
     def __init__(self, list):
         # 全文検索前処理
-        schema = Schema(index=NUMERIC(stored=True), body=TEXT(stored=True, analyzer=NgramTokenizer(minsize=1,maxsize
-        =4)))
+        schema = Schema(index=NUMERIC(stored=True), body=TEXT(stored=True, analyzer=NgramTokenizer(minsize=1,maxsize=4)))
         self.ix = create_in('tmp', schema)
         writer = self.ix.writer()
         for i, v in enumerate(list):
-            writer.add_document(index=i, body=v[4])
+            body = ''
+            for b in v['choices']:
+                body += b['n'] + ' '
+            writer.add_document(index=i, body=body)
         writer.commit()
         self.list = list
 
