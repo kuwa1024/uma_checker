@@ -1,7 +1,9 @@
+import os, sys
 import FileLoad
 import Ocr
 import Search
 import japanize_kivy
+from kivy.resources import resource_add_path, resource_find
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
@@ -79,4 +81,6 @@ class UmaApp(App):
         return MyLayout()
 
 if __name__ == '__main__':
+    if hasattr(sys, '_MEIPASS'):
+        resource_add_path(os.path.join(sys._MEIPASS))
     UmaApp().run()
