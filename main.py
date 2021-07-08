@@ -80,7 +80,7 @@ class MainWindow(QWidget):
         self.setWindowTitle('UmaChecker')
 
     def ssClicked(self):
-        self.textEdit.text(ocr_obj.getString())
+        self.textEdit.setText(ocr_obj.getString())
         self.view()
 
     def wordClicked(self):
